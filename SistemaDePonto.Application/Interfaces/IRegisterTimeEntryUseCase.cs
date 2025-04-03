@@ -2,7 +2,7 @@
 
 namespace SistemaDePonto.Application.Interfaces
 {
-    public interface IRegisterTimeEntriesByDateUseCase
+    public interface IRegisterTimeEntryUseCase
     {
         Task<RegisterTimeEntryResponse> ExecuteAsync(Guid userId, RegisterTimeEntryRequest request);
     }
