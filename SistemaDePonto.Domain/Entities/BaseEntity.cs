@@ -6,14 +6,16 @@
         public DateTime CreatedAt { get; private set; }
         public DateTime UpdatedAt { get; private set; }
 
-        public void SetCreatedAt(DateTime createdAt)
+        public void SetCreatedAt()
         {
-            CreatedAt = createdAt;
+            var now = DateTime.UtcNow;
+            CreatedAt = now;
+            UpdatedAt = now;
         }
 
-        public void SetUpdatedAt(DateTime updatedAt)
+        public void SetUpdatedAt()
         {
-            UpdatedAt = updatedAt;
+            UpdatedAt = DateTime.UtcNow;
         }
     }
 }
