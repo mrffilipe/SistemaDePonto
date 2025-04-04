@@ -1,7 +1,9 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using SistemaDePonto.Application.Interfaces;
 using SistemaDePonto.Infrastructure.Authentication;
+using SistemaDePonto.Infrastructure.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,6 +30,11 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             ValidateLifetime = true,
         };
     });
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+{
+    var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
+});
 
 // Add infrastructure to DI
 builder.Services.AddScoped<ICurrentUser, CurrentUser>();

@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaDePonto.Application"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaDePonto.Infrastructure", "SistemaDePonto.Infrastructure\SistemaDePonto.Infrastructure.csproj", "{569CBE93-7DBF-4533-BDBD-ADF325750B41}"
 EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{DE60EDEA-DC3F-4B17-B778-699AEB34198D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{569CBE93-7DBF-4533-BDBD-ADF325750B41}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{569CBE93-7DBF-4533-BDBD-ADF325750B41}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{569CBE93-7DBF-4533-BDBD-ADF325750B41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE60EDEA-DC3F-4B17-B778-699AEB34198D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE60EDEA-DC3F-4B17-B778-699AEB34198D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE60EDEA-DC3F-4B17-B778-699AEB34198D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE60EDEA-DC3F-4B17-B778-699AEB34198D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
