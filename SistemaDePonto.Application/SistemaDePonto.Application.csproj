@@ -12,7 +12,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SistemaDePonto.Domain\SistemaDePonto.Domain.csproj" />
-    <ProjectReference Include="..\SistemaDePonto.Infrastructure\SistemaDePonto.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

@@ -6,4 +6,17 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Repositories\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SistemaDePonto.Application\SistemaDePonto.Application.csproj" />
+    <ProjectReference Include="..\SistemaDePonto.Domain\SistemaDePonto.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
