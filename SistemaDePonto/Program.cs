@@ -2,8 +2,10 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using SistemaDePonto.Application.Interfaces;
+using SistemaDePonto.Domain.Interfaces;
 using SistemaDePonto.Infrastructure.Authentication;
 using SistemaDePonto.Infrastructure.Persistence;
+using SistemaDePonto.Infrastructure.Persistence.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -38,6 +40,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
 // Add infrastructure to DI
 builder.Services.AddScoped<ICurrentUser, CurrentUser>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<ITimeEntryRepository, TimeEntryRepository>();
 
 // Add application to DI
 
