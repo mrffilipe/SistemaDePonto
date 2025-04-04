@@ -29,7 +29,7 @@ namespace SistemaDePonto.Application.Services
             var fullName = await _currentUser.GetFullNameAsync();
 
             var newUser = new User(uid, fullName, email);
-            newUser = await _userRepository.AddAsync(newUser); // verificar
+            newUser = await _userRepository.AddAsync(newUser);
 
             return newUser;
         }

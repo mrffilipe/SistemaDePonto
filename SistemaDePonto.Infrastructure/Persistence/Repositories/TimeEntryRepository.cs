@@ -1,18 +1,37 @@
-﻿using SistemaDePonto.Domain.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using SistemaDePonto.Domain.Entities;
 using SistemaDePonto.Domain.Interfaces;
 
 namespace SistemaDePonto.Infrastructure.Persistence.Repositories
 {
     public class TimeEntryRepository : ITimeEntryRepository
     {
-        public Task<List<TimeEntry>> GetByDateAsync(Guid userId, DateTime startDate, DateTime? endDate = null)
+        private readonly ApplicationDbContext _context;
+
+        public TimeEntryRepository(ApplicationDbContext context)
         {
-            throw new NotImplementedException();
+            _context = context;
         }
 
-        public Task AddAsync(TimeEntry entry)
+        public async Task<List<TimeEntry>> GetByDateAsync(Guid userId, DateTime startDate, DateTime? endDate = null)
         {
-            throw new NotImplementedException();
+            var query = _context.TimeEntries
+               .Where(te => te.UserId == userId && te.Timestamp >= startDate);
+
+            if (endDate.HasValue)
+            {
+                query = query.Where(te => te.Timestamp <= endDate.Value);
+            }
+
+            return await query
+                .OrderBy(te => te.Timestamp)
+                .ToListAsync();
+        }
+
+        public async Task AddAsync(TimeEntry entry)
+        {
+            _context.TimeEntries.Add(entry);
+            await _context.SaveChangesAsync();
         }
     }
 }

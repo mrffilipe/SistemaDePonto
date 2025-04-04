@@ -1,0 +1,103 @@
+type: collection.insomnia.rest/5.0
+name: Scratch Pad
+meta:
+  id: wrk_scratchpad
+  created: 1739198326185
+  modified: 1739198326185
+collection:
+  - name: SistemaDePonto
+    meta:
+      id: fld_28a5b02ea9fe43d7a5ccb20fa0ab1935
+      created: 1743641967172
+      modified: 1743641967172
+      sortKey: -1743641967172
+    children:
+      - url: https://localhost:5000/api/TimeEntry
+        name: ListTimeEntriesByDate
+        meta:
+          id: req_104d15a9653d4766ba2f0dc8b57bc9a0
+          created: 1743645087428
+          modified: 1743734943735
+          isPrivate: false
+          sortKey: -1743645087428
+        method: GET
+        parameters:
+          - id: pair_b8459c5eb56c42efab17e96ea5c78147
+            name: StartDate
+            value: 2025-04-04
+            disabled: false
+          - id: pair_c18cc4afb1614caaa6166929c244df78
+            name: EndDate
+            value: 2025-04-05
+            disabled: false
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.1
+            id: pair_4b9b500e992a4d589268874797bc21b3
+          - id: pair_06dc32acb23c47c287c081142451131a
+            name: Content-Type
+            value: application/json
+            disabled: false
+          - id: pair_fc37289bb5d64766bd44216bd96c9357
+            name: Authorization
+            value: Bearer
+              eyJhbGciOiJSUzI1NiIsImtpZCI6ImE5ZGRjYTc2YzEyMzMyNmI5ZTJlODJkOGFjNDg0MWU1MzMyMmI3NmEiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vc2lzdGVtYWRlcG9udG8tNDkxMzAiLCJhdWQiOiJzaXN0ZW1hZGVwb250by00OTEzMCIsImF1dGhfdGltZSI6MTc0MzczNDY0OCwidXNlcl9pZCI6IkFRWUJxaGh3Q1FZUGRsQ0VvclhYTzlVREREdjIiLCJzdWIiOiJBUVlCcWhod0NRWVBkbENFb3JYWE85VURERHYyIiwiaWF0IjoxNzQzNzM0NjQ4LCJleHAiOjE3NDM3MzgyNDgsImVtYWlsIjoibXJmZmlsaXBlQG91dGxvb2suY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbIm1yZmZpbGlwZUBvdXRsb29rLmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn19.mCTJRXi7b_ZYZC3DQcBG0Miuo2yK91jQUKB394AOomzNhRITBs2vUUyb0AtWnGTFBbMDZ-mPSCpKm_1FUImQyTyGVi0Xron7fw3_Ebiw6bXu7evfZkhIS2IZYrhIOCNN2V-su6MSZmiwUc7WojvPVAZP-yutYZa_bWSOz8sECglD8dFKcc56839DRlObmiL0llRLso30NdOyCe3EhdPR7aTbCxpg2u-t4JSfp4tHb2y71gBcR_N-MD6QIzIchCMNl2UxpG8lrznZCfDWLrFfkpzwz9jimZX5UW5y5rFTfbc0-ix_p5pBbX7FXN1OPc7kIzz_ODuelyvFuINwCwrlcQ
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: https://localhost:5000/api/TimeEntry
+        name: RegisterTimeEntry
+        meta:
+          id: req_2221061e0bbd42998317757546c30ded
+          created: 1743734788859
+          modified: 1743734899384
+          isPrivate: false
+          sortKey: -1743645087378
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"type": 1
+            }
+        parameters:
+          - id: pair_8be1f6a49835488281df3fc194cc4b2f
+            disabled: false
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.1
+            id: pair_4b9b500e992a4d589268874797bc21b3
+          - id: pair_fc37289bb5d64766bd44216bd96c9357
+            name: Authorization
+            value: Bearer
+              eyJhbGciOiJSUzI1NiIsImtpZCI6ImE5ZGRjYTc2YzEyMzMyNmI5ZTJlODJkOGFjNDg0MWU1MzMyMmI3NmEiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vc2lzdGVtYWRlcG9udG8tNDkxMzAiLCJhdWQiOiJzaXN0ZW1hZGVwb250by00OTEzMCIsImF1dGhfdGltZSI6MTc0MzczNDY0OCwidXNlcl9pZCI6IkFRWUJxaGh3Q1FZUGRsQ0VvclhYTzlVREREdjIiLCJzdWIiOiJBUVlCcWhod0NRWVBkbENFb3JYWE85VURERHYyIiwiaWF0IjoxNzQzNzM0NjQ4LCJleHAiOjE3NDM3MzgyNDgsImVtYWlsIjoibXJmZmlsaXBlQG91dGxvb2suY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbIm1yZmZpbGlwZUBvdXRsb29rLmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn19.mCTJRXi7b_ZYZC3DQcBG0Miuo2yK91jQUKB394AOomzNhRITBs2vUUyb0AtWnGTFBbMDZ-mPSCpKm_1FUImQyTyGVi0Xron7fw3_Ebiw6bXu7evfZkhIS2IZYrhIOCNN2V-su6MSZmiwUc7WojvPVAZP-yutYZa_bWSOz8sECglD8dFKcc56839DRlObmiL0llRLso30NdOyCe3EhdPR7aTbCxpg2u-t4JSfp4tHb2y71gBcR_N-MD6QIzIchCMNl2UxpG8lrznZCfDWLrFfkpzwz9jimZX5UW5y5rFTfbc0-ix_p5pBbX7FXN1OPc7kIzz_ODuelyvFuINwCwrlcQ
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1739198329605
+    modified: 1739198329605
+environments:
+  name: Base Environment
+  meta:
+    id: env_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1739198329534
+    modified: 1739198329534
+    isPrivate: false
