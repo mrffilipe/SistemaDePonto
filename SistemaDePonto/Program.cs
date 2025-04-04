@@ -2,6 +2,8 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using SistemaDePonto.Application.Interfaces;
+using SistemaDePonto.Application.Services;
+using SistemaDePonto.Application.UseCases;
 using SistemaDePonto.Domain.Interfaces;
 using SistemaDePonto.Infrastructure.Authentication;
 using SistemaDePonto.Infrastructure.Persistence;
@@ -44,6 +46,9 @@ builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<ITimeEntryRepository, TimeEntryRepository>();
 
 // Add application to DI
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IListTimeEntriesByDateUseCase, ListTimeEntriesByDateUseCase>();
+builder.Services.AddScoped<IRegisterTimeEntryUseCase, RegisterTimeEntryUseCase>();
 
 var app = builder.Build();
 
