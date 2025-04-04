@@ -5,6 +5,6 @@ namespace SistemaDePonto.Domain.Interfaces
     public interface IUserRepository
     {
         Task<User?> GetByFirebaseUidAsync(string firebaseUid);
-        Task AddAsync(User user);
+        Task<User> AddAsync(User user);
     }
 }

@@ -5,12 +5,12 @@ namespace SistemaDePonto.Infrastructure.Persistence.Repositories
 {
     public class UserRepository : IUserRepository
     {
-        public Task<User?> GetByFirebaseUidAsync(string firebaseUid)
+        public async Task<User?> GetByFirebaseUidAsync(string firebaseUid)
         {
             throw new NotImplementedException();
         }
 
-        public Task AddAsync(User user)
+        public async Task<User> AddAsync(User user)
         {
             throw new NotImplementedException();
         }

@@ -44,7 +44,7 @@ namespace SistemaDePonto.Infrastructure.Authentication
             return Task.FromResult(uid);
         }
 
-        public Task<string> FullNameAsync()
+        public Task<string> GetFullNameAsync()
         {
             var fullName = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Name)?.Value ?? string.Empty;
 

@@ -8,16 +8,16 @@ namespace SistemaDePonto.API.Controllers
     [Authorize]
     public class TimeEntryController : BaseController
     {
-        private readonly ICurrentUser _currentUser;
+        private readonly IUserService _userService;
         private readonly IListTimeEntriesByDateUseCase _listTimeEntriesByDateUseCase;
         private readonly IRegisterTimeEntryUseCase _registerUseCase;
 
         public TimeEntryController(
-            ICurrentUser currentUser,
+            IUserService userService,
             IListTimeEntriesByDateUseCase listTimeEntriesByDateUseCase,
             IRegisterTimeEntryUseCase registerUseCase)
         {
-            _currentUser = currentUser;
+            _userService = userService;
             _listTimeEntriesByDateUseCase = listTimeEntriesByDateUseCase;
             _registerUseCase = registerUseCase;
         }
@@ -25,16 +25,16 @@ namespace SistemaDePonto.API.Controllers
         [HttpGet]
         public async Task<ActionResult<List<ListTimeEntriesByDateResponse>>> GetTimeEntriesByDate([FromQuery] ListTimeEntriesByDateRequest request)
         {
-            var userId = await _currentUser.GetUserIdAsync();
-            var result = await _listTimeEntriesByDateUseCase.ExecuteAsync(userId, request);
+            var user = await _userService.GetOrCreateCurrentUserAsync();
+            var result = await _listTimeEntriesByDateUseCase.ExecuteAsync(user.Id, request);
             return Ok(result);
         }
 
         [HttpPost]
         public async Task<ActionResult<RegisterTimeEntryResponse>> RegisterTime([FromBody] RegisterTimeEntryRequest request)
         {
-            var userId = await _currentUser.GetUserIdAsync();
-            var result = await _registerUseCase.ExecuteAsync(userId, request);
+            var user = await _userService.GetOrCreateCurrentUserAsync();
+            var result = await _registerUseCase.ExecuteAsync(user.Id, request);
             return Ok(result);
         }
     }

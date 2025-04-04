@@ -5,6 +5,5 @@ namespace SistemaDePonto.Application.Interfaces
     public interface IUserService
     {
         Task<User> GetOrCreateCurrentUserAsync();
-        Task<User?> GetCurrentUserAsync();
     }
 }

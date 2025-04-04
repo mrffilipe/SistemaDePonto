@@ -4,7 +4,7 @@
     {
         Task<Guid> GetUserIdAsync();
         Task<string> GetFirebaseUidAsync();
-        Task<string> FullNameAsync();
+        Task<string> GetFullNameAsync();
         Task<string> GetEmailAsync();
     }
 }
