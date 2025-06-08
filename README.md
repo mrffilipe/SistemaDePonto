@@ -35,7 +35,7 @@ Sistema de ponto digital desenvolvido com Flutter (mobile) e ASP.NET Core (.NET 
 
 ```
 SistemaDePonto/
-├── backend/        # API .NET 8
+├── backend/        # API .NET 8.0
 ├── mobile/         # App Flutter
 ├── assets/         # Imagens para o README
 └── README.md
